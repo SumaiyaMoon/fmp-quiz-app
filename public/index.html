@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Quiz App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="UI/style.css">
+</head>
+
+
+<body class="text-center background">
+
+    <div class="container d-flex align-items-center flex-column justify-content-center m-auto flex-wrap  ">
+
+        <div class="row d-flex align-items-center justify-content-center  text-center  m-2 flex-wrap">
+
+            <div class="col shadow-lg rounded p-2 pb-4" id="displayQuizBox">
+                <div class="row d-flex align-items-center justify-content-center flex-column flex-wrap">
+                    <div class="col">
+
+                        <div class="row mx-3 rounded d-flex align-items-center justify-content-center flex-column">
+                            <div class="col">
+                                <!-- Popup Start -->
+
+                                <div class="row d-flex align-items-center justify-content-center m-1 p-1">
+                                    <div class="col  ">
+                                        <div class="row  rounded d-flex align-items-center justify-content-center ">
+                                            <div class="col" id="timerDivDisplay">
+
+
+                                                <button id="startTimerButton" onclick="startQuiz(); add();"
+                                                    class="btn btn-outline-dark shadow-lg pnBtn bg-black  fs-1">Start
+                                                    Quiz</button>
+
+                                                <!-- <div id="popup" class="popup">
+                                                    <div class="popup-content">
+                                                        <span class="close">&times;</span>
+                                                        <p>The timer has started for 30 minutes.</p>
+                                                    </div>
+                                                </div> -->
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Popup End -->
+
+                                <div>
+                                    <span id="quizAppDisplay">
+                                        <!-- Heading Start -->
+                                        <div class="row ">
+                                            <div class="col  ">
+                                                <div
+                                                    class="row  rounded d-flex align-items-center justify-content-center ">
+                                                    <div class="col">
+                                                        <h4 class="  appHeading  rounded px-5 py-2 ">My First Quiz App
+                                                        </h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Heading End -->
+
+                                        <!-- Quiz Functions  Start -->
+                                        <div class="row my-3">
+                                            <div class="col  ">
+                                                <div
+                                                    class="row  rounded d-flex align-items-center justify-content-center flex-wrap ">
+
+                                                    <div class=" col-lg-4">
+                                                        <p class="  heading rounded px-5 py-1 bg-black ">Question No:
+                                                            <br><span id="currentQuestion">1</span>/<span
+                                                                id="totalQuestions">10</span>
+                                                        </p>
+                                                    </div>
+
+                                                    <div class=" col-lg-4">
+                                                        <p class="  heading rounded px-2 py-1 bg-black py-3">Timer: <br>
+                                                            <span id="displayThr">00</span> :
+                                                            <span id="displayTmin">00</span> :
+                                                            <span id="displayTsec">00</span>
+
+                                                        </p>
+                                                    </div>
+
+                                                    <div class=" col-lg-4">
+                                                        <p class="heading rounded px-5 py-1 bg-black" id="marks">Total
+                                                            Marks: <br> <span id="obtainedMarks">0</span> / <span
+                                                                id="totalMarks">15</span></p>
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Quiz Fuunctions End -->
+                                        <!-- Quiz Question Start -->
+                                        <div class="row my-3">
+                                            <div class="col  ">
+                                                <div
+                                                    class="row  rounded d-flex align-items-center justify-content-center ">
+                                                    <div class="col">
+                                                        <h5 class="  heading rounded p-2 question "
+                                                            id="displayQuestion">Question XYZ</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Quiz Question End -->
+
+                                        <!-- Quiz Options Start-->
+                                        <div class="row ">
+                                            <div class="col ">
+                                                <div
+                                                    class="row  rounded d-flex align-items-center justify-content-center flex-column flex-wrap">
+
+                                                    <div class="col">
+                                                        <div class="row d-flex align-items-center justify-content-center gap-2 m-3 "
+                                                            id="answerQuestion">
+
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Quiz Options End -->
+
+                                        <!-- Next and Previous Button Start -->
+                                        <div class="row ">
+                                            <div class="col">
+                                                <div
+                                                    class="row  rounded d-flex align-items-center justify-content-center">
+                                                </div>
+                                                <div class="col ">
+                                                    <div
+                                                        class="row d-flex align-items-center justify-content-center gap-2  flex-column">
+                                                        <!-- <button
+                                                        class="col box_quiz sticky-bottom  rounded  bg-black pnBtn" onclick="prevQue()">Previous</button> -->
+                                                        <button
+                                                            class="col box_quiz sticky-bottom  rounded  bg-black pnBtn"
+                                                            onclick="nextQue();">Next</button>
+                                                        <button
+                                                            class="col box_quiz sticky-bottom  rounded  bg-black pnBtn"
+                                                            onclick="submitQuiz()">submit Quiz</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Next and Previous Button End -->
+
+                                    </span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+</body>
+<script type="module" src="UI/app.js"></script>
+<script type="module" src="firebaseConfig.js"></script>
+<!-- <script type="module" src="/Panel/panel.js"></script> -->
+
+
+</html>

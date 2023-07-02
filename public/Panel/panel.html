@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Quiz App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../UI/style.css">
+</head>
+
+
+<body class="text-center background">
+
+    <div class="container d-flex align-items-center flex-column justify-content-center m-auto flex-wrap  ">
+
+        <div class="row d-flex align-items-center justify-content-center  text-center  m-2 flex-wrap">
+
+            <div class="col shadow-lg rounded p-2 pb-4" id="displayQuizBox">
+                <div class="row d-flex align-items-center justify-content-center flex-column flex-wrap">
+                    <div class="col">
+
+                        <div class="row mx-3 rounded d-flex align-items-center justify-content-center flex-column">
+                            <div class="col">
+
+
+                                <div>
+
+                                    <!-- Heading Start -->
+                                    <div class="row ">
+                                        <div class="col  ">
+                                            <div class="row  rounded d-flex align-items-center justify-content-center ">
+                                                <div class="col">
+                                                    <h4 class="  appHeading  rounded px-5 py-2 ">My First Quiz App</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Heading End -->
+
+ 
+                                    <!-- Quiz Question Start -->
+                                    <div class="row my-3">
+                                        <div class="col  ">
+                                            <div class="row  rounded d-flex align-items-center justify-content-center ">
+                                                <div class="col">
+                                                    <h5 class="  heading rounded p-2 question "><span class="">Add
+                                                            Question</span> <br><input type="text"
+                                                            placeholder="Question" class="m-2 p-2" id="questionInput">
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Quiz Question End -->
+
+                                    <!-- Quiz Options Start-->
+                                    <div class="row ">
+                                        <div class="col ">
+                                            <div
+                                                class="row  rounded d-flex align-items-center justify-content-center flex-column flex-wrap">
+
+                                                <div class="col">
+                                                    <div
+                                                        class="row d-flex align-items-center justify-content-center gap-2 m-3 ">
+                                                        <h5 class="  heading rounded p-2 question "><span class="">Add
+                                                                Options</span> <br><input type="text"
+                                                                placeholder="Options" class="m-2 p-2"
+                                                                id="optInput"><button
+                                                                class="m-2 p-2 box_quiz sticky-bottom  rounded  bg-black pnBtn"
+                                                                onclick="addOpt();">Add</button>
+                                                                <button
+                                                                class="m-2 p-2 box_quiz sticky-bottom  rounded  bg-black pnBtn"
+                                                                onclick="clearChoices();">Clear All</button>
+                                                            </h5>
+                                                        <ul id="optParent"
+                                                            class="rounded shadow m-2 p-2 d-flex flex-column flex-wrap">
+
+
+
+
+                                                        </ul>
+                                                        <!-- Correct Opt Start -->
+                                                        <h5 class="  heading rounded p-2 question "><span
+                                                                class="">Correct Option</span> <br><input type="text"
+                                                                placeholder="Correct Option" class="m-2 p-2"
+                                                                id="answerInput"></h5>
+
+                                                        <!-- Correct Opt End -->
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Quiz Options End -->
+
+                                    <!-- Add in DB Start -->
+                                    <div class="row ">
+                                        <div class="col">
+                                            
+                                            <div class="col ">
+                                                <div
+                                                    class="row d-flex align-items-center justify-content-center gap-2  flex-column">
+                                                    <!-- <button
+                                                        class="col box_quiz sticky-bottom  rounded  bg-black pnBtn" onclick="prevQue()">Previous</button> -->
+
+                                                    <button class="col box_quiz sticky-bottom  rounded  bg-black pnBtn"
+                                                        onclick="addInDB(); addNewQuestion();">Add Quiz Question in DB</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Add in DB End -->
+
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+</body>
+<!-- <script type="module" src="../UI/app.js"></script> -->
+<script type="module" src="panel.js"></script>
+<script type="module" src="../firebaseConfig.js"></script>
+
+</html>
